@@ -7,18 +7,18 @@ import ru.volchkov.telegramBot.buttons.KeyboardButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KeyboardButtonBuilder implements Builder {
+public class ButtonBuilder implements ButtonsBuilder {
 
     final private InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
     final private List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
     final private List<InlineKeyboardButton> rowInline = new ArrayList<>();
 
-    public KeyboardButtonBuilder() {
+    public ButtonBuilder() {
         super();
     }
 
     @Override
-    public KeyboardButtonBuilder addButton(String setText, String setCallbackData) {
+    public ButtonBuilder addButton(String setText, String setCallbackData) {
         InlineKeyboardButton button = new InlineKeyboardButton();
         button.setText(setText);
         button.setCallbackData(setCallbackData);
@@ -27,13 +27,13 @@ public class KeyboardButtonBuilder implements Builder {
     }
 
     @Override
-    public KeyboardButtonBuilder addRowInline() {
+    public ButtonBuilder addRowInline() {
         rowsInline.add(rowInline);
         return this;
     }
 
     @Override
-    public KeyboardButtonBuilder setKeyboard() {
+    public ButtonBuilder setKeyboard() {
         inlineKeyboardMarkup.setKeyboard(rowsInline);
         return this;
     }
