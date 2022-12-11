@@ -9,6 +9,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import ru.volchkov.telegramBot.builder.ButtonsBuilder;
 import ru.volchkov.telegramBot.builder.ButtonBuilder;
 import ru.volchkov.telegramBot.model.Person;
+import ru.volchkov.telegramBot.model.PersonStatus;
 import ru.volchkov.telegramBot.repository.BookRepository;
 import ru.volchkov.telegramBot.model.Book;
 import ru.volchkov.telegramBot.repository.PersonRepository;
@@ -70,6 +71,48 @@ public class BookService {
         bookRepository.save(book);
         String text = update.getCallbackQuery().getMessage().getChat().getFirstName() + ", Вы сдали книгу обратно в библиотеку";
         return createEditMessage(chatId, text, messageId);
+    }
+
+    public SendMessage addNewBook(long peopleId, String chatId) {
+        Person person = personRepository.findPersonById(peopleId).orElseThrow();
+        Book book = new Book();
+        book.setName("test");
+        book.setAuthor("test");
+        book.setYearOfRelease(1);
+        long bookId = bookRepository.findAll().size() + 1;
+        book.setId(bookId);
+        bookRepository.save(book);
+        person.setPersonStatus(PersonStatus.TapingNameBook);
+        personRepository.save(person);
+        return new SendMessage(chatId, "Добавляем новую книгу в библиотеку:\n\n" + "Введите название книги:");
+    }
+
+    public SendMessage addBookName(String name, String chatId, Person person) {
+        Book book = bookRepository.findBookByName("test").orElseThrow();
+        book.setName(name);
+        bookRepository.save(book);
+        person.setPersonStatus(PersonStatus.TapingAuthorBook);
+        personRepository.save(person);
+        return new SendMessage(chatId, "Вы успешно добавили название книги.\n\n" + "Введите автора:");
+    }
+
+    public SendMessage addBookAuthor(String name, String chatId, Person person) {
+        Book book = bookRepository.findBookByAuthor("test").orElseThrow();
+        book.setAuthor(name);
+        bookRepository.save(book);
+        person.setPersonStatus(PersonStatus.TapingYearOfBook);
+        personRepository.save(person);
+        return new SendMessage(chatId, "Вы успешно добавили автора.\n\n" + "Введите год выпуска книги:");
+    }
+
+    public SendMessage addBookYear(int year, String chatId, long Id) {
+        Book book = bookRepository.findBookByYearOfRelease(1).orElseThrow();
+        book.setYearOfRelease(year);
+        Person person = personRepository.findPersonById(Id).orElseThrow();
+        person.setPersonStatus(PersonStatus.USER);
+        bookRepository.save(book);
+        personRepository.save(person);
+        return new SendMessage(chatId, "Вы успешно добавили год выпуска и создали книгу.\n\n" + "Теперь можете взять ее из библиотеки.");
     }
 
     public SendMessage createMessage(String chatId, String text) {
