@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class BookRepository {
+public class BookDAO {
 
     List<Book> listOfBooks = new ArrayList<>();
 
@@ -22,6 +22,10 @@ public class BookRepository {
 
     public List<Book> index() {
         return listOfBooks;
+    }
+
+    public void addBook(Book book) {
+        listOfBooks.add(book);
     }
 
     public Book findBook(String name) {
