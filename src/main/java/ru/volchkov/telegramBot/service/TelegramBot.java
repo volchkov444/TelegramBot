@@ -11,42 +11,36 @@ import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageTe
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.objects.commands.scope.BotCommandScopeDefault;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import ru.volchkov.telegramBot.config.BotConfig;
-import ru.volchkov.telegramBot.model.Book;
-import ru.volchkov.telegramBot.model.Person;
-import ru.volchkov.telegramBot.repository.BookRepository;
-import ru.volchkov.telegramBot.model.PersonStatus;
-import ru.volchkov.telegramBot.repository.PersonRepository;
+import ru.volchkov.telegramBot.dao.BookRepository;
+import ru.volchkov.telegramBot.dao.PeopleRepository;
+import ru.volchkov.telegramBot.model.PeopleStatus;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Slf4j
 @Component
 public class TelegramBot extends TelegramLongPollingBot {
-    BookRepository bookRepository;
-    PersonRepository personRepository;
-    WordService wordService;
     BookService bookService;
-    PersonService personService;
+    UserService userService;
     final BotConfig config;
+    final BookRepository bookRepository;
+    final PeopleRepository peopleRepository;
     String regex = "\\d+";
     static final String HELP_TEXT = "1. Добавление, изменение и удаление книг\n" + "2. Страница со списком всех людей\n" + "3. Страница со списком всех книг\n" + "4. Страница человека, на которой показаны значения его полей и список книг которые он взял.\n" + "6. Возможность освободить книгу";
     static final String INFO_TEXT = EmojiParser.parseToUnicode("Бот взят за основу разработки API приложения, чтобы реализовать" + " бизнес-логику проекта без html кода.\n                                                     " + ":heavy_check_mark:Задача:heavy_check_mark:\n" + "В местной библиотеке хотят перейти на цифровой учет книг. Нам " + "было необходимо реализовать приложение для них. Библиотекари " + "должны иметь возможность регистрировать читателей, выдавать им " + "книги и освобождать книги (после того, как читатель возвращает " + "книгу обратно в библиотеку).");
     static final String YES_BUTTON = "YES_BUTTON";
     static final String NO_BUTTON = "NO_BUTTON";
-    private int anInt;
 
 
-    public TelegramBot(BotConfig config, PersonService personService,
-                       BookService bookService, WordService wordService, PersonRepository personRepository, BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-        this.personRepository = personRepository;
-        this.wordService = wordService;
+    public TelegramBot(BotConfig config, BookRepository bookRepository, PeopleRepository personRepository, UserService userService, BookService bookService) {
         this.bookService = bookService;
-        this.personService = personService;
+        this.userService = userService;
+        this.bookRepository = bookRepository;
+        this.peopleRepository = personRepository;
         this.config = config;
         List<BotCommand> listOfCommands = new ArrayList<>();
         listOfCommands.add(new BotCommand("/start", "получить начальную информацию"));
@@ -75,78 +69,51 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-
         long id = 0;
         String textFromUpdate = null;
         if (update.hasMessage()) {
             textFromUpdate = update.getMessage().getText();
             id = update.getMessage().getChat().getId();
-        } else if (update.hasCallbackQuery()) {
-            id = update.getCallbackQuery().getMessage().getChat().getId();
         }
-        if (update.hasMessage() && personRepository.findPersonById(id).isEmpty()) {
-            executeMessage(personService.startCommand(update));
+        if (update.hasMessage() && peopleRepository.findPeople(id) == null) {
+            executeMessage(userService.startCommand(peopleRepository, update));
         }
-        try {
-            anInt = Integer.parseInt(textFromUpdate);
-        } catch (Exception e) {
-            log.info("Error");
+        if (update.hasMessage() && textFromUpdate.equals("/register") &&
+                peopleRepository.findPeople(id).getPeopleStatus().equals(PeopleStatus.GUEST)) {
+            executeMessage(userService.register(update));
         }
-        Person personById = personRepository.findPersonById(id).orElseThrow();
         if (update.hasCallbackQuery()) {
-            String name = update.getCallbackQuery().getData();
+            String callbackData = update.getCallbackQuery().getData();
             long messageId = update.getCallbackQuery().getMessage().getMessageId();
             String chatId = String.valueOf(update.getCallbackQuery().getMessage().getChatId());
             long peopleId = update.getCallbackQuery().getMessage().getChat().getId();
-            if (bookRepository.findBookByName(name).isPresent() && personById.getPersonStatus().equals(PersonStatus.USER) &&
-                    getBook(name).orElseThrow().getPerson() == null) {
-                executeMessage(bookService.takeBook(peopleId, name, chatId, messageId));
+            long idQuery = update.getCallbackQuery().getMessage().getChat().getId();
+            if (bookRepository.findBook(callbackData) != null && peopleRepository.findPeople(idQuery).getPeopleStatus().equals(PeopleStatus.USER) &&
+                    bookRepository.findBook(callbackData).getBookStatus()) {
+                executeMessage(bookService.takeBook(peopleRepository, peopleId, bookRepository, callbackData, chatId, messageId));
 
-            } else if (bookRepository.findBookByName(name).isPresent() && getBook(name).orElseThrow().getPerson() != null &&
-                    personById.getPersonStatus().equals(PersonStatus.USER) &&
-                    update.getCallbackQuery().getMessage().getChat().getId().equals(getBook(name).orElseThrow().getPerson().getId())) {
-                executeMessage(bookService.giveBook(name, update, chatId, messageId));
+            } else if (bookRepository.findBook(callbackData) != null && !bookRepository.findBook(callbackData).getBookStatus() &&
+                    peopleRepository.findPeople(idQuery).getPeopleStatus().equals(PeopleStatus.USER) &&
+                    update.getCallbackQuery().getMessage().getChat().getId().equals(peopleRepository.findPeople(callbackData))) {
+                executeMessage(bookService.giveBook(peopleRepository, bookRepository, callbackData, update, chatId, messageId));
             }
-            if (name.equals("listOfUsers") && personById.getPersonStatus().equals(PersonStatus.USER)) {
-                personService.listOfUsers(chatId, personRepository).
-                        forEach(this::executeMessage);
-            }
-            if (personRepository.findPersonByName(name).isPresent() && personById.getPersonStatus().equals(PersonStatus.USER)) {
-                personService.userInfo(getPersonByName(name).orElseThrow().getId(), chatId)
-                        .forEach(this::executeMessage);
-            }
-            if (name.equals(YES_BUTTON)) {
+            if (callbackData.equals(YES_BUTTON)) {
                 executeEditMessageText("Сколько вам лет?", chatId, messageId);
 
             }
-            if (name.equals(NO_BUTTON)) {
+            if (callbackData.equals(NO_BUTTON)) {
                 String text = EmojiParser.parseToUnicode("Вы нажали на кнопку NO:cry:");
                 executeEditMessageText(text, chatId, messageId);
             }
         }
-        if (update.hasMessage() && textFromUpdate.equals("/register") &&
-                personById.getPersonStatus().equals(PersonStatus.GUEST)) {
-            executeMessage(personService.register(update));
-        }
-        if (update.hasMessage() && personRepository.findPersonByName(wordService.firstUpperCase(textFromUpdate)).isPresent() &&
-                personById.getPersonStatus().equals(PersonStatus.USER)) {
-            executeMessage(personService.listOfUser(String.valueOf(update.getMessage().getChatId()), wordService.firstUpperCase(textFromUpdate)));
-
-        }
         if (update.hasMessage() && textFromUpdate.matches(regex) &&
-                anInt <= 100
-                && anInt > 0 &&
-                personById.getPersonStatus().equals(PersonStatus.GUEST)) {
-            executeMessage(personService.setStatusUSER(update));
+                Integer.parseInt(textFromUpdate) <= 100
+                && Integer.parseInt(textFromUpdate) > 0 &&
+                peopleRepository.findPeople(id).getPeopleStatus().equals(PeopleStatus.GUEST)) {
+            executeMessage(userService.setStatusUSER(update, peopleRepository));
         }
-        if (update.hasMessage() && textFromUpdate.matches(regex) &&
-                anInt > 100
-                || anInt < 0 &&
-                personById.getPersonStatus().equals(PersonStatus.GUEST)) {
-            prepareAndSendMessage(String.valueOf(update.getMessage().getChatId()), "Ошибка ввода");
-        }
-        if (update.hasMessage() && personById.getPersonStatus().equals(PersonStatus.USER) &&
-                !textFromUpdate.matches(regex) && personRepository.findPersonByName(wordService.firstUpperCase(textFromUpdate)).isEmpty()) {
+        if (update.hasMessage() && peopleRepository.findPeople(id).getPeopleStatus().equals(PeopleStatus.USER) &&
+                !textFromUpdate.matches(regex)) {
             String message = textFromUpdate;
             String chatId = String.valueOf(update.getMessage().getChatId());
 
@@ -154,23 +121,15 @@ public class TelegramBot extends TelegramLongPollingBot {
                 case "/start" -> startCommandReceived(chatId, update.getMessage().getChat().getFirstName());
                 case "/info" -> prepareAndSendMessage(chatId, INFO_TEXT);
                 case "/help" -> prepareAndSendMessage(chatId, HELP_TEXT);
-                case "/listofusers" -> personService.userMenu(chatId, personRepository).
+                case "/listofusers" -> userService.listOfUsers(chatId, peopleRepository).
                         forEach(this::executeMessage);
-                case "/takebook" -> bookService.allBooks(chatId).
+                case "/takebook" -> bookService.allBooks(chatId, peopleRepository, bookRepository).
                         forEach(this::executeMessage);
                 default ->
                         prepareAndSendMessage(chatId, EmojiParser.parseToUnicode(update.getMessage().getChat().getFirstName()
                                 + ",Вы ввели неверную команду,попробуйте еще раз :unamused:"));
             }
         }
-    }
-
-    private Optional<Person> getPersonByName(String name) {
-        return personRepository.findPersonByName(name);
-    }
-
-    private Optional<Book> getBook(String name) {
-        return bookRepository.findBookByName(name);
     }
 
     private void startCommandReceived(String chatId, String name) {
@@ -212,5 +171,17 @@ public class TelegramBot extends TelegramLongPollingBot {
         message.setChatId(chatId);
         message.setText(textToSend);
         executeMessage(message);
+    }
+
+    private void sendMessage(String chatId, String textToSend, ReplyKeyboard keyboard) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setChatId(chatId);
+        if (textToSend != null) {
+            sendMessage.setText(textToSend);
+        }
+        if (keyboard != null) {
+            sendMessage.setReplyMarkup(keyboard);
+        }
+        executeMessage(sendMessage);
     }
 }

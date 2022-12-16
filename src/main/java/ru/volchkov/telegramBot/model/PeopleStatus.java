@@ -1,6 +1,7 @@
 package ru.volchkov.telegramBot.model;
 
-public enum PersonStatus {
+public enum PeopleStatus {
     GUEST,
-    USER
+    USER,
+    CLIENT
 }
