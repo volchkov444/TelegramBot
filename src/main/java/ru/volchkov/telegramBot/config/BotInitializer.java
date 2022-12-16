@@ -23,7 +23,7 @@ public class BotInitializer {
         try {
             telegramBotsApi.registerBot(bot);
         } catch (TelegramApiException e) {
-            log.error("Error occupied " + e.getMessage());
+            log.error("Error occupied "+e.getMessage());
         }
     }
 }
