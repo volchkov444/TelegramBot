@@ -2,6 +2,7 @@ package ru.volchkov.telegramBot.model;
 
 import lombok.Data;
 import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.LazyCollection;
 
 import javax.persistence.*;
 import java.util.ArrayList;
