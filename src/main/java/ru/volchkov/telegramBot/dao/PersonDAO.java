@@ -21,13 +21,4 @@ public class PersonDAO {
     public void addPeople(People people) {
         peopleList.add(people);
     }
-    public long findPeople(String name){
-        long id=0;
-        for (People people : peopleList) {
-            if (people.findBook(name) != null) {
-                id=people.getId();
-            }
-        }
-        return id;
-    }
 }

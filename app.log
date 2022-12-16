@@ -1,319 +1,322 @@
-2022-10-19 00:00:42,381 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 11508 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
-2022-10-19 00:00:42,386 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-10-19 00:00:42,981 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2022-10-19 00:00:42,987 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
-2022-10-19 00:00:42,987 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
-2022-10-19 00:00:42,987 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-19 00:00:43,057 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
-2022-10-19 00:00:43,057 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 625 ms
-2022-10-19 00:00:43,605 ERROR ru.volchkov.telegramBot.service.TelegramBot [main] Error setting bot's command list: Error sending commands: [400] Bad Request: BOT_COMMAND_INVALID
-2022-10-19 00:00:43,739 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-10-19 00:00:43,775 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
-2022-10-19 00:00:43,786 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-19 00:00:43,883 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.717 seconds (JVM running for 2.325)
-2022-10-19 00:02:07,591 INFO ru.volchkov.telegramBot.service.TelegramBot [PeopleSpringBot Telegram Executor] Replied to user Daniil
-2022-10-19 00:04:37,152 INFO org.apache.coyote.http11.Http11Processor [http-nio-8080-exec-1] Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x030xdc0xb80x0f%0xeb0xd40x1040xf6=0xd60xc6v0xc50xf10xbc:P0xecS0xae0xbe0xa5(Oi0x0a0xbc0x990x83aV ]. HTTP method names must be tokens
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-2022-10-19 00:24:51,829 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 12780 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
-2022-10-19 00:24:51,831 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-10-19 00:24:52,430 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2022-10-19 00:24:52,436 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
-2022-10-19 00:24:52,436 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
-2022-10-19 00:24:52,436 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-19 00:24:52,511 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
-2022-10-19 00:24:52,511 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 644 ms
-2022-10-19 00:24:53,108 ERROR ru.volchkov.telegramBot.service.TelegramBot [main] Error setting bot's command list: Error sending commands: [400] Bad Request: BOT_COMMAND_INVALID
-2022-10-19 00:24:53,263 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-10-19 00:24:53,300 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
-2022-10-19 00:24:53,311 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-19 00:24:53,396 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.8 seconds (JVM running for 2.31)
-2022-10-19 00:25:10,977 INFO ru.volchkov.telegramBot.service.TelegramBot [PeopleSpringBot Telegram Executor] Replied to user Daniil
-2022-10-19 00:28:33,763 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 24568 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
-2022-10-19 00:28:33,764 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-10-19 00:28:34,287 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2022-10-19 00:28:34,292 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
-2022-10-19 00:28:34,292 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
-2022-10-19 00:28:34,292 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-19 00:28:34,362 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
-2022-10-19 00:28:34,362 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 565 ms
-2022-10-19 00:28:34,943 ERROR ru.volchkov.telegramBot.service.TelegramBot [main] Error setting bot's command list: Error sending commands: [400] Bad Request: BOT_COMMAND_INVALID
-2022-10-19 00:28:35,075 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-10-19 00:28:35,108 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
-2022-10-19 00:28:35,121 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-19 00:28:35,206 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.649 seconds (JVM running for 2.141)
-2022-10-19 00:30:27,675 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 22096 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
-2022-10-19 00:30:27,676 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-10-19 00:30:28,194 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2022-10-19 00:30:28,199 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
-2022-10-19 00:30:28,199 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
-2022-10-19 00:30:28,199 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-19 00:30:28,268 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
-2022-10-19 00:30:28,268 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 547 ms
-2022-10-19 00:30:28,889 ERROR ru.volchkov.telegramBot.service.TelegramBot [main] Error setting bot's command list: Error sending commands: [400] Bad Request: BOT_COMMAND_INVALID
-2022-10-19 00:30:29,073 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-10-19 00:30:29,109 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
-2022-10-19 00:30:29,120 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-19 00:30:29,206 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.73 seconds (JVM running for 2.244)
-2022-10-19 00:30:40,162 INFO ru.volchkov.telegramBot.service.TelegramBot [PeopleSpringBot Telegram Executor] Replied to user Daniil
-2022-10-19 00:34:37,135 INFO org.apache.coyote.http11.Http11Processor [http-nio-8080-exec-1] Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x030xe80x0d0x1dD0x9b0xf5R0x0c0xef0xa4;0xd10xa5E0xf60xfb0xf90xbc0x800xa70xf20xc5J0xec`u0x930xc10xfad-" ]. HTTP method names must be tokens
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-2022-10-19 00:42:00,210 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 19468 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
-2022-10-19 00:42:00,211 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-10-19 00:42:00,734 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2022-10-19 00:42:00,740 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
-2022-10-19 00:42:00,741 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
-2022-10-19 00:42:00,741 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-19 00:42:00,816 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
-2022-10-19 00:42:00,816 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 570 ms
-2022-10-19 00:42:01,415 ERROR ru.volchkov.telegramBot.service.TelegramBot [main] Error setting bot's command list: Error sending commands: [400] Bad Request: BOT_COMMAND_INVALID
-2022-10-19 00:42:01,637 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-10-19 00:42:01,675 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
-2022-10-19 00:42:01,687 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-19 00:42:01,778 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.768 seconds (JVM running for 2.352)
-2022-10-19 00:42:02,109 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+2022-10-15 00:18:33,604 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 30388 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 00:18:33,609 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 00:18:34,150 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 00:18:34,155 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 00:18:34,155 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 00:18:34,156 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 00:18:34,225 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 00:18:34,225 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 575 ms
+2022-10-15 00:18:34,887 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 00:18:34,936 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 00:18:34,949 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 00:18:35,024 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.624 seconds (JVM running for 2.142)
+2022-10-15 00:25:08,164 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 19344 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 00:25:08,166 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 00:25:08,711 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 00:25:08,716 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 00:25:08,716 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 00:25:08,716 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 00:25:08,786 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 00:25:08,786 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 579 ms
+2022-10-15 00:25:09,533 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 00:25:09,570 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 00:25:09,582 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 00:25:09,662 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.702 seconds (JVM running for 2.224)
+2022-10-15 00:54:21,367 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 17736 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 00:54:21,369 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 00:54:21,905 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 00:54:21,910 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 00:54:21,910 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 00:54:21,910 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 00:54:21,979 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 00:54:21,979 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 573 ms
+2022-10-15 00:54:22,640 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 00:54:22,674 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 00:54:22,688 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 00:54:22,764 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.609 seconds (JVM running for 2.219)
+2022-10-15 00:54:42,535 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 24336 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 00:54:42,537 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 00:54:43,198 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 00:54:43,203 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 00:54:43,204 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 00:54:43,204 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 00:54:43,271 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 00:54:43,272 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 688 ms
+2022-10-15 00:54:43,965 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 00:54:44,003 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 00:54:44,019 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 00:54:44,091 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.759 seconds (JVM running for 2.343)
+2022-10-15 00:56:17,639 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
 java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:92)
+	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:71)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
 	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
-2022-10-19 00:42:11,006 INFO ru.volchkov.telegramBot.service.TelegramBot [PeopleSpringBot Telegram Executor] Replied to user Daniil
-2022-10-19 00:42:17,937 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+2022-10-15 00:56:30,873 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
 java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:92)
+	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:71)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
 	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
-2022-10-19 00:43:24,550 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 5620 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
-2022-10-19 00:43:24,552 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-10-19 00:43:25,174 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2022-10-19 00:43:25,180 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
-2022-10-19 00:43:25,180 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
-2022-10-19 00:43:25,180 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-19 00:43:25,251 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
-2022-10-19 00:43:25,251 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 650 ms
-2022-10-19 00:43:25,776 ERROR ru.volchkov.telegramBot.service.TelegramBot [main] Error setting bot's command list: Error sending commands: [400] Bad Request: BOT_COMMAND_INVALID
-2022-10-19 00:43:25,926 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-10-19 00:43:25,963 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
-2022-10-19 00:43:25,978 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-19 00:43:26,046 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.744 seconds (JVM running for 2.399)
-2022-10-19 00:43:26,340 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "ru.volchkov.telegramBot.model.People.getPeopleStatus()" because the return value of "ru.volchkov.telegramBot.dao.PersonDAO.collect(long)" is null
-java.lang.NullPointerException: Cannot invoke "ru.volchkov.telegramBot.model.People.getPeopleStatus()" because the return value of "ru.volchkov.telegramBot.dao.PersonDAO.collect(long)" is null
-	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:92)
+2022-10-15 00:57:34,632 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:71)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
 	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
-2022-10-19 00:43:36,117 INFO ru.volchkov.telegramBot.service.TelegramBot [PeopleSpringBot Telegram Executor] Replied to user Daniil
-2022-10-19 00:44:37,100 INFO org.apache.coyote.http11.Http11Processor [http-nio-8080-exec-1] Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x030xec0xda0xb60x950xb70xb20x0e0x930xaf0xbac0xb3X0x1f0x910xafk0x910x880x0b0x0a,_0x940x8260x1a0xf60xda0xb9(# ]. HTTP method names must be tokens
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-2022-10-19 02:14:02,677 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 8388 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
-2022-10-19 02:14:02,678 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-10-19 02:14:03,185 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2022-10-19 02:14:03,190 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
-2022-10-19 02:14:03,190 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
-2022-10-19 02:14:03,190 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-19 02:14:03,259 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
-2022-10-19 02:14:03,259 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 545 ms
-2022-10-19 02:14:03,774 ERROR ru.volchkov.telegramBot.service.TelegramBot [main] Error setting bot's command list: Error sending commands: [400] Bad Request: BOT_COMMAND_INVALID
-2022-10-19 02:14:03,919 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-10-19 02:14:03,957 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
-2022-10-19 02:14:03,971 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-19 02:14:04,041 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.56 seconds (JVM running for 2.102)
-2022-10-19 02:14:21,853 INFO ru.volchkov.telegramBot.service.TelegramBot [PeopleSpringBot Telegram Executor] Replied to user Daniil
-2022-10-19 02:14:37,104 INFO org.apache.coyote.http11.Http11Processor [http-nio-8080-exec-1] Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x03L0x18/0xb7(9(GWG'0x840xf90x1f0xb40xbe&0x89`0xc2J0xf1OS0xe90x000xef+B.0xea0x0f ]. HTTP method names must be tokens
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-2022-10-19 02:16:48,510 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 5520 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
-2022-10-19 02:16:48,511 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-10-19 02:16:48,999 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2022-10-19 02:16:49,004 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
-2022-10-19 02:16:49,005 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
-2022-10-19 02:16:49,005 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-19 02:16:49,074 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
-2022-10-19 02:16:49,074 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 529 ms
-2022-10-19 02:17:10,353 ERROR ru.volchkov.telegramBot.service.TelegramBot [main] Error setting bot's command list: Unable to execute setMyCommands method
-2022-10-19 02:17:10,553 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-10-19 02:17:10,586 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
-2022-10-19 02:17:10,598 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-19 02:17:10,910 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 22.603 seconds (JVM running for 23.166)
-2022-10-19 02:17:41,041 INFO ru.volchkov.telegramBot.service.TelegramBot [PeopleSpringBot Telegram Executor] Replied to user Daniil
-2022-10-19 02:18:10,092 INFO org.apache.coyote.http11.Http11Processor [http-nio-8080-exec-2] Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x030x090xd70xa90xed0x9dc0x8c0x1d&0x09Wv0xd40x01M_0xc50xa7c0xa60xadF0x900xd1s0x060x1c0x8ek+0xc30xdc ]. HTTP method names must be tokens
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-2022-10-19 02:32:30,493 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 22816 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
-2022-10-19 02:32:30,494 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-10-19 02:32:31,009 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2022-10-19 02:32:31,014 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
-2022-10-19 02:32:31,014 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
-2022-10-19 02:32:31,014 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-19 02:32:31,082 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
-2022-10-19 02:32:31,082 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 556 ms
-2022-10-19 02:32:31,686 ERROR ru.volchkov.telegramBot.service.TelegramBot [main] Error setting bot's command list: Error sending commands: [400] Bad Request: BOT_COMMAND_INVALID
-2022-10-19 02:32:31,860 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-10-19 02:32:31,898 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
-2022-10-19 02:32:31,909 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-19 02:32:31,998 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.69 seconds (JVM running for 2.206)
-2022-10-19 02:32:46,857 INFO ru.volchkov.telegramBot.service.TelegramBot [PeopleSpringBot Telegram Executor] Replied to user Daniil
-2022-10-19 02:34:37,135 INFO org.apache.coyote.http11.Http11Processor [http-nio-8080-exec-1] Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x03T0x070x1f0xd90x110xc60xd1*0x000xe80xac0xdcS,0x820xc770x18D0x830xf1F0xa60xe70xd60xa90x8a;0xbd0xad0x1a0x0c ]. HTTP method names must be tokens
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-2022-10-19 02:39:26,878 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 22276 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
-2022-10-19 02:39:26,880 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-10-19 02:39:27,378 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2022-10-19 02:39:27,384 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
-2022-10-19 02:39:27,384 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
-2022-10-19 02:39:27,384 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-19 02:39:27,457 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
-2022-10-19 02:39:27,458 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 544 ms
-2022-10-19 02:39:28,058 ERROR ru.volchkov.telegramBot.service.TelegramBot [main] Error setting bot's command list: Error sending commands: [400] Bad Request: BOT_COMMAND_INVALID
-2022-10-19 02:39:28,197 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-10-19 02:39:28,232 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
-2022-10-19 02:39:28,243 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-19 02:39:28,320 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.634 seconds (JVM running for 2.189)
-2022-10-19 02:39:36,455 INFO ru.volchkov.telegramBot.service.TelegramBot [PeopleSpringBot Telegram Executor] Replied to user Daniil
-2022-10-19 02:40:29,850 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 944 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
-2022-10-19 02:40:29,851 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-10-19 02:40:30,345 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2022-10-19 02:40:30,350 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
-2022-10-19 02:40:30,350 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
-2022-10-19 02:40:30,350 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-19 02:40:30,423 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
-2022-10-19 02:40:30,423 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 539 ms
-2022-10-19 02:40:30,924 ERROR ru.volchkov.telegramBot.service.TelegramBot [main] Error setting bot's command list: Error sending commands: [400] Bad Request: BOT_COMMAND_INVALID
-2022-10-19 02:40:31,058 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-10-19 02:40:31,098 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
-2022-10-19 02:40:31,110 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-19 02:40:31,187 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.531 seconds (JVM running for 2.257)
-2022-10-19 02:43:35,183 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "ru.volchkov.telegramBot.model.People.getPeopleStatus()" because the return value of "ru.volchkov.telegramBot.dao.PersonDAO.collect(long)" is null
-java.lang.NullPointerException: Cannot invoke "ru.volchkov.telegramBot.model.People.getPeopleStatus()" because the return value of "ru.volchkov.telegramBot.dao.PersonDAO.collect(long)" is null
-	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:92)
+2022-10-15 01:00:37,275 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 18080 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 01:00:37,277 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 01:00:37,941 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 01:00:37,947 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:00:37,947 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 01:00:37,947 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 01:00:38,023 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 01:00:38,023 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 685 ms
+2022-10-15 01:00:38,680 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 01:00:38,718 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:00:38,730 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 01:00:38,803 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.723 seconds (JVM running for 2.333)
+2022-10-15 01:01:16,406 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:71)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
 	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
-2022-10-19 02:43:43,935 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 6888 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
-2022-10-19 02:43:43,936 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-10-19 02:43:44,456 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2022-10-19 02:43:44,460 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
-2022-10-19 02:43:44,460 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
-2022-10-19 02:43:44,460 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-19 02:43:44,530 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
-2022-10-19 02:43:44,530 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 560 ms
-2022-10-19 02:43:45,076 ERROR ru.volchkov.telegramBot.service.TelegramBot [main] Error setting bot's command list: Error sending commands: [400] Bad Request: BOT_COMMAND_INVALID
-2022-10-19 02:43:45,231 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-10-19 02:43:45,266 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
-2022-10-19 02:43:45,278 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-19 02:43:45,358 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.605 seconds (JVM running for 2.099)
-2022-10-19 02:44:37,126 INFO org.apache.coyote.http11.Http11Processor [http-nio-8080-exec-1] Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x030xb9-0x93,0xb00xfb97$$0x120xe4sv0x8d0x0e#0xf20xa70xcf0x9dq0xe10xfa70x8a0xb00xc30xa90x830x0bB ]. HTTP method names must be tokens
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-2022-10-19 02:47:56,207 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 3068 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
-2022-10-19 02:47:56,209 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-10-19 02:47:56,714 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2022-10-19 02:47:56,719 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
-2022-10-19 02:47:56,719 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
-2022-10-19 02:47:56,719 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-19 02:47:56,787 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
-2022-10-19 02:47:56,787 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 538 ms
-2022-10-19 02:47:57,333 ERROR ru.volchkov.telegramBot.service.TelegramBot [main] Error setting bot's command list: Error sending commands: [400] Bad Request: BOT_COMMAND_INVALID
-2022-10-19 02:47:57,539 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-10-19 02:47:57,616 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
-2022-10-19 02:47:57,631 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-19 02:47:57,710 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.706 seconds (JVM running for 2.185)
-2022-10-19 02:48:10,120 INFO org.apache.coyote.http11.Http11Processor [http-nio-8080-exec-1] Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x030xb10x950xfa'E0xcb[[0x8c0x9ff0xaa0x830x01J0x8f0x0f0xe80xa50x9f0x9d0x140xd60xef0x95p0x820xc60x020xe0PH ]. HTTP method names must be tokens
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-2022-10-19 02:49:59,686 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 10384 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
-2022-10-19 02:49:59,687 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-10-19 02:50:00,191 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2022-10-19 02:50:00,197 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
-2022-10-19 02:50:00,197 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
-2022-10-19 02:50:00,197 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-19 02:50:00,266 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
-2022-10-19 02:50:00,266 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 542 ms
-2022-10-19 02:50:00,882 ERROR ru.volchkov.telegramBot.service.TelegramBot [main] Error setting bot's command list: Error sending commands: [400] Bad Request: BOT_COMMAND_INVALID
-2022-10-19 02:50:01,020 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2022-10-19 02:50:01,055 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
-2022-10-19 02:50:01,067 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2022-10-19 02:50:01,141 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.644 seconds (JVM running for 2.164)
+2022-10-15 01:10:45,926 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 11292 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 01:10:45,927 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 01:10:46,434 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 01:10:46,438 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:10:46,439 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 01:10:46,439 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 01:10:46,510 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 01:10:46,510 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 553 ms
+2022-10-15 01:10:47,198 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 01:10:47,234 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:10:47,245 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 01:10:47,321 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.59 seconds (JVM running for 2.065)
+2022-10-15 01:11:05,159 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:71)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2022-10-15 01:11:06,312 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:71)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2022-10-15 01:13:39,940 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 6980 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 01:13:39,941 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 01:13:40,460 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 01:13:40,466 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:13:40,466 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 01:13:40,466 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 01:13:40,543 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 01:13:40,543 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 568 ms
+2022-10-15 01:13:41,222 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 01:13:41,263 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:13:41,275 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 01:13:41,350 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.601 seconds (JVM running for 2.116)
+2022-10-15 01:13:47,017 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:71)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2022-10-15 01:13:48,799 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:71)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2022-10-15 01:14:03,960 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:71)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2022-10-15 01:14:05,110 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:71)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2022-10-15 01:22:59,392 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 18884 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 01:22:59,393 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 01:22:59,892 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 01:22:59,897 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:22:59,898 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 01:22:59,898 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 01:22:59,966 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 01:22:59,966 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 538 ms
+2022-10-15 01:23:00,695 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 01:23:00,737 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:23:00,752 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 01:23:00,831 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.625 seconds (JVM running for 2.134)
+2022-10-15 01:23:24,849 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:71)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2022-10-15 01:23:27,993 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:71)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2022-10-15 01:28:17,571 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 18560 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 01:28:17,573 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 01:28:18,135 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 01:28:18,228 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 619 ms
+2022-10-15 01:28:19,190 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 01:28:19,254 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 01:28:19,328 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.976 seconds (JVM running for 2.517)
+2022-10-15 01:28:23,226 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 21564 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 01:28:23,228 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 01:28:23,770 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 01:28:23,775 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:28:23,775 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 01:28:23,775 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 01:28:23,855 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 01:28:23,855 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 589 ms
+2022-10-15 01:28:24,551 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 01:28:24,590 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:28:24,602 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 01:28:24,675 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.649 seconds (JVM running for 2.143)
+2022-10-15 01:28:44,746 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.hasText()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.hasText()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:71)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2022-10-15 01:30:27,808 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 9516 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 01:30:27,810 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 01:30:28,327 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 01:30:28,332 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:30:28,332 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 01:30:28,332 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 01:30:28,407 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 01:30:28,407 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 563 ms
+2022-10-15 01:30:29,090 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 01:30:29,125 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:30:29,136 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 01:30:29,214 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.595 seconds (JVM running for 2.066)
+2022-10-15 01:30:33,393 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [PeopleSpringBot Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getText()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at ru.volchkov.telegramBot.service.TelegramBot.onUpdateReceived(TelegramBot.java:81)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
+2022-10-15 01:32:21,834 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 6772 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 01:32:21,835 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 01:32:22,349 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 01:32:22,353 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:32:22,354 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 01:32:22,354 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 01:32:22,424 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 01:32:22,424 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 551 ms
+2022-10-15 01:32:23,083 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 01:32:23,121 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:32:23,137 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 01:32:23,210 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.579 seconds (JVM running for 2.083)
+2022-10-15 01:36:14,109 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 18132 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 01:36:14,110 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 01:36:14,609 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 01:36:14,615 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:36:14,615 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 01:36:14,615 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 01:36:14,685 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 01:36:14,685 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 542 ms
+2022-10-15 01:36:15,457 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 01:36:15,492 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:36:15,503 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 01:36:15,598 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.676 seconds (JVM running for 2.143)
+2022-10-15 01:37:35,977 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 22368 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 01:37:35,978 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 01:37:36,481 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 01:37:36,485 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:37:36,486 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 01:37:36,486 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 01:37:36,554 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 01:37:36,554 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 535 ms
+2022-10-15 01:37:37,276 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 01:37:37,314 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:37:37,325 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 01:37:37,397 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.622 seconds (JVM running for 2.079)
+2022-10-15 01:41:27,297 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 21708 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 01:41:27,298 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 01:41:27,801 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 01:41:27,808 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:41:27,809 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 01:41:27,809 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 01:41:27,879 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 01:41:27,879 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 545 ms
+2022-10-15 01:41:28,543 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 01:41:28,575 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:41:28,586 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 01:41:28,659 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.555 seconds (JVM running for 2.005)
+2022-10-15 01:52:18,605 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 31276 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 01:52:18,606 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 01:52:19,179 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 01:52:19,186 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:52:19,186 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 01:52:19,187 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 01:52:19,263 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 01:52:19,263 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 622 ms
+2022-10-15 01:52:19,959 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 01:52:19,995 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 01:52:20,009 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 01:52:20,099 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.69 seconds (JVM running for 2.183)
+2022-10-15 02:06:12,453 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 14444 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 02:06:12,454 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 02:06:12,963 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 02:06:12,969 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 02:06:12,970 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 02:06:12,970 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 02:06:13,041 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 02:06:13,041 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 552 ms
+2022-10-15 02:06:13,775 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 02:06:13,811 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 02:06:13,825 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 02:06:13,901 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.634 seconds (JVM running for 2.099)
+2022-10-15 02:07:28,789 INFO ru.volchkov.telegramBot.service.TelegramBot [PeopleSpringBot Telegram Executor] Replied to user Daniil
+2022-10-15 02:09:03,275 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 15708 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 02:09:03,276 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 02:09:03,821 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 02:09:03,829 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 02:09:03,830 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 02:09:03,830 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 02:09:03,905 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 02:09:03,905 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 594 ms
+2022-10-15 02:09:04,566 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 02:09:04,603 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 02:09:04,615 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 02:09:04,697 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.618 seconds (JVM running for 2.193)
+2022-10-15 02:09:30,739 INFO ru.volchkov.telegramBot.service.TelegramBot [PeopleSpringBot Telegram Executor] Replied to user Daniil
+2022-10-15 02:11:24,448 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 2208 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 02:11:24,450 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 02:11:24,965 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 02:11:24,970 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 02:11:24,970 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 02:11:24,970 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 02:11:25,043 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 02:11:25,043 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 559 ms
+2022-10-15 02:11:25,744 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 02:11:25,780 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 02:11:25,795 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 02:11:25,895 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.644 seconds (JVM running for 2.148)
+2022-10-15 02:12:18,695 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Starting TelegramPeopleApplication using Java 18 on DESKTOP-9D5BUO1 with PID 31212 (D:\TelegramBotApi\TelegramBot\target\classes started by solo in D:\TelegramBotApi\TelegramBot)
+2022-10-15 02:12:18,697 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-10-15 02:12:19,224 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-10-15 02:12:19,229 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2022-10-15 02:12:19,229 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-10-15 02:12:19,229 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-15 02:12:19,298 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-10-15 02:12:19,298 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 566 ms
+2022-10-15 02:12:20,022 WARN org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [main] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-10-15 02:12:20,083 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2022-10-15 02:12:20,096 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-15 02:12:20,175 INFO ru.volchkov.telegramBot.TelegramPeopleApplication [main] Started TelegramPeopleApplication in 1.663 seconds (JVM running for 2.117)
+2022-10-15 02:12:36,075 INFO ru.volchkov.telegramBot.service.TelegramBot [PeopleSpringBot Telegram Executor] Replied to user Daniil
