@@ -22,6 +22,7 @@ import ru.volchkov.telegramBot.repository.BookRepository;
 import ru.volchkov.telegramBot.model.PersonStatus;
 import ru.volchkov.telegramBot.repository.PersonRepository;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -36,11 +37,11 @@ public class TelegramBot extends TelegramLongPollingBot {
     private final BookService bookService;
     private final PersonService personService;
     private final BotConfig config;
-    String regex = "\\d+";
-    static final String HELP_TEXT = "1. Добавление, изменение и удаление книг\n" + "2. Страница со списком всех людей\n" + "3. Страница со списком всех книг\n" + "4. Страница человека, на которой показаны значения его полей и список книг которые он взял.\n" + "6. Возможность освободить книгу";
-    static final String INFO_TEXT = EmojiParser.parseToUnicode("Бот взят за основу разработки API приложения, чтобы реализовать" + " бизнес-логику проекта без html кода.\n                                                     " + ":heavy_check_mark:Задача:heavy_check_mark:\n" + "В местной библиотеке хотят перейти на цифровой учет книг. Нам " + "было необходимо реализовать приложение для них. Библиотекари " + "должны иметь возможность регистрировать читателей, выдавать им " + "книги и освобождать книги (после того, как читатель возвращает " + "книгу обратно в библиотеку).");
-    static final String YES_BUTTON = "YES_BUTTON";
-    static final String NO_BUTTON = "NO_BUTTON";
+    private final String regex = "\\d+";
+    private static final String HELP_TEXT = "1. Добавление, изменение и удаление книг\n" + "2. Страница со списком всех людей\n" + "3. Страница со списком всех книг\n" + "4. Страница человека, на которой показаны значения его полей и список книг которые он взял.\n" + "6. Возможность освободить книгу";
+    private static final String INFO_TEXT = EmojiParser.parseToUnicode("Бот взят за основу разработки API приложения, чтобы реализовать" + " бизнес-логику проекта без html кода.\n                                                     " + ":heavy_check_mark:Задача:heavy_check_mark:\n" + "В местной библиотеке хотят перейти на цифровой учет книг. Нам " + "было необходимо реализовать приложение для них. Библиотекари " + "должны иметь возможность регистрировать читателей, выдавать им " + "книги и освобождать книги (после того, как читатель возвращает " + "книгу обратно в библиотеку).");
+    private static final String YES_BUTTON = "YES_BUTTON";
+    private static final String NO_BUTTON = "NO_BUTTON";
     private int anInt;
 
     @Override
@@ -73,21 +74,26 @@ public class TelegramBot extends TelegramLongPollingBot {
             log.info("Error");
         }
         Person personById = personRepository.findPersonById(id).orElseThrow();
+        boolean personIsUser = personById.getPersonStatus().equals(PersonStatus.USER);
         if (update.hasCallbackQuery()) {
             String name = update.getCallbackQuery().getData();
             long messageId = update.getCallbackQuery().getMessage().getMessageId();
             String chatIdFromQuery = String.valueOf(update.getCallbackQuery().getMessage().getChatId());
             long peopleId = update.getCallbackQuery().getMessage().getChat().getId();
-            if (bookRepository.findBookByName(name).isPresent() && personById.getPersonStatus().equals(PersonStatus.USER) && getBook(name).orElseThrow().getPerson() == null) {
+            boolean bookIsPresent = bookRepository.findBookByName(name).isPresent();
+            if (bookIsPresent && personIsUser
+                    && getBook(name).orElseThrow().getPerson() == null) {
                 executeMessage(bookService.takeBook(peopleId, name, chatIdFromQuery, messageId));
 
-            } else if (bookRepository.findBookByName(name).isPresent() && getBook(name).orElseThrow().getPerson() != null && personById.getPersonStatus().equals(PersonStatus.USER) && update.getCallbackQuery().getMessage().getChat().getId().equals(getBook(name).orElseThrow().getPerson().getId())) {
+            } else if (bookIsPresent && getBook(name).orElseThrow().getPerson() != null
+                    && personIsUser
+                    && update.getCallbackQuery().getMessage().getChat().getId().equals(getBook(name).orElseThrow().getPerson().getId())) {
                 executeMessage(bookService.giveBook(name, update, chatIdFromQuery, messageId));
             }
-            if (name.equals("listOfUsers") && personById.getPersonStatus().equals(PersonStatus.USER)) {
+            if (name.equals("listOfUsers") && personIsUser) {
                 personService.listOfUsers(chatIdFromQuery, personRepository).forEach(this::executeMessage);
             }
-            if (personRepository.findPersonByName(name).isPresent() && personById.getPersonStatus().equals(PersonStatus.USER)) {
+            if (personRepository.findPersonByName(name).isPresent() && personIsUser) {
                 personService.userInfo(getPersonByName(name).orElseThrow().getId(), chatIdFromQuery).forEach(this::executeMessage);
             }
             if (name.equals(YES_BUTTON)) {
@@ -99,46 +105,53 @@ public class TelegramBot extends TelegramLongPollingBot {
                 executeEditMessageText(text, chatIdFromQuery, messageId);
             }
         }
+        boolean personIsGuest = personById.getPersonStatus().equals(PersonStatus.GUEST);
         String chatIdFromUpdate = String.valueOf(update.getMessage().getChatId());
-        if (update.hasMessage() && personById.getPersonStatus().equals(PersonStatus.TapingNameBook) && bookRepository.findBookByName("test").isPresent()) {
+        if (update.hasMessage() && personById.getPersonStatus().equals(PersonStatus.TAPING_NAME_BOOK)
+                && bookRepository.findBookByName("test").isPresent()) {
             executeMessage(bookService.addBookName(textFromUpdate, chatIdFromUpdate, personById));
             return;
         }
-        if (update.hasMessage() && personById.getPersonStatus().equals(PersonStatus.TapingAuthorBook) && bookRepository.findBookByAuthor("test").isPresent() && bookRepository.findBookByName("test").isEmpty()) {
+        if (update.hasMessage() && personById.getPersonStatus().equals(PersonStatus.TAPING_AUTHOR_BOOK)
+                && bookRepository.findBookByAuthor("test").isPresent() && bookRepository.findBookByName("test").isEmpty()) {
             executeMessage(bookService.addBookAuthor(textFromUpdate, chatIdFromUpdate, personById));
             return;
         }
-        if (update.hasMessage() && textFromUpdate.matches(regex) && bookRepository.findBookByName("test").isEmpty() && bookRepository.findBookByAuthor("test").isEmpty() && bookRepository.findBookByYearOfRelease(1).isPresent() && personById.getPersonStatus().equals(PersonStatus.TapingYearOfBook)) {
+        if (update.hasMessage() && textFromUpdate.matches(regex) && bookRepository.findBookByName("test").isEmpty()
+                && bookRepository.findBookByAuthor("test").isEmpty() && bookRepository.findBookByYearOfRelease(1).isPresent()
+                && personById.getPersonStatus().equals(PersonStatus.TAPING_YEAR_OF_BOOK)) {
             executeMessage(bookService.addBookYear(anInt, chatIdFromUpdate, id));
             return;
         }
-        if (update.hasMessage() && textFromUpdate.equals("/register") && personById.getPersonStatus().equals(PersonStatus.GUEST)) {
+        if (update.hasMessage() && textFromUpdate.equals("/register") && personIsGuest) {
             executeMessage(personService.register(update));
         }
-        if (update.hasMessage() && personRepository.findPersonByName(wordService.firstUpperCase(textFromUpdate)).isPresent() && personById.getPersonStatus().equals(PersonStatus.USER)) {
+        if (update.hasMessage() && personRepository.findPersonByName(wordService.firstUpperCase(textFromUpdate)).isPresent()
+                && personIsUser) {
             executeMessage(personService.listOfUser(chatIdFromUpdate, wordService.firstUpperCase(textFromUpdate)));
 
         }
-        if (update.hasMessage() && textFromUpdate.matches(regex) && anInt <= 100 && anInt > 0 && personById.getPersonStatus().equals(PersonStatus.GUEST)) {
+        if (update.hasMessage() && textFromUpdate.matches(regex) && anInt <= 100 && anInt > 0 && personIsGuest) {
             executeMessage(personService.setStatusUSER(update));
         }
-        if (update.hasMessage() && textFromUpdate.matches(regex) && anInt > 100 && personById.getPersonStatus().equals(PersonStatus.GUEST) || anInt < 0) {
+        if (update.hasMessage() && textFromUpdate.matches(regex) && anInt > 100 && personIsGuest || anInt < 0) {
             prepareAndSendMessage(chatIdFromUpdate, "Ошибка ввода");
         }
-        if (update.hasMessage() && personById.getPersonStatus().equals(PersonStatus.USER) && !textFromUpdate.matches(regex) && personRepository.findPersonByName(wordService.firstUpperCase(textFromUpdate)).isEmpty()) {
-            String message = textFromUpdate;
-            String chatId = chatIdFromUpdate;
+        if (update.hasMessage() && personIsUser && !textFromUpdate.matches(regex)
+                && personRepository.findPersonByName(wordService.firstUpperCase(textFromUpdate)).isEmpty()) {
 
-            switch (message) {
-                case "/start" -> startCommandReceived(chatId, update.getMessage().getChat().getFirstName());
-                case "/info" -> prepareAndSendMessage(chatId, INFO_TEXT);
-                case "/help" -> prepareAndSendMessage(chatId, HELP_TEXT);
-                case "/listofusers" -> personService.userMenu(chatId, personRepository).forEach(this::executeMessage);
-                case "/takebook" -> bookService.allBooks(chatId).forEach(this::executeMessage);
+            switch (textFromUpdate) {
+                case "/start" -> startCommandReceived(chatIdFromUpdate, update.getMessage().getChat().getFirstName());
+                case "/info" -> prepareAndSendMessage(chatIdFromUpdate, INFO_TEXT);
+                case "/help" -> prepareAndSendMessage(chatIdFromUpdate, HELP_TEXT);
+                case "/listofusers" ->
+                        personService.userMenu(chatIdFromUpdate, personRepository).forEach(this::executeMessage);
+                case "/takebook" -> bookService.allBooks(chatIdFromUpdate).forEach(this::executeMessage);
                 case "/addbook" ->
-                        executeMessage(bookService.addNewBook(update.getMessage().getChat().getId(), chatId));
+                        executeMessage(bookService.addNewBook(update.getMessage().getChat().getId(), chatIdFromUpdate));
                 default ->
-                        prepareAndSendMessage(chatId, EmojiParser.parseToUnicode(update.getMessage().getChat().getFirstName() + ",Вы ввели неверную команду,попробуйте еще раз :unamused:"));
+                        prepareAndSendMessage(chatIdFromUpdate, EmojiParser.parseToUnicode(update.getMessage().getChat().getFirstName()
+                                + ",Вы ввели неверную команду,попробуйте еще раз :unamused:"));
             }
         }
     }
@@ -152,7 +165,8 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     private void startCommandReceived(String chatId, String name) {
-        String answer = EmojiParser.parseToUnicode("Привет, " + name + ", добро пожаловать в библиотеку с цифровым учетом книг " + ":blush: . \n" + "Для описания фунционала нажмите на команду /help\n" + "Для информации о проекте нажмите /info");
+        String answer = EmojiParser.parseToUnicode("Привет, " + name + ", добро пожаловать в библиотеку с цифровым учетом книг "
+                + ":blush: . \n" + "Для описания фунционала нажмите на команду /help\n" + "Для информации о проекте нажмите /info");
         log.info("Replied to user " + name);
         prepareAndSendMessage(chatId, answer);
     }
@@ -192,7 +206,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         executeMessage(message);
     }
 
-    @EventListener(ApplicationReadyEvent.class)
+    @PostConstruct
     public void runAfterStartup() {
         List<BotCommand> listOfCommands = new ArrayList<>();
         listOfCommands.add(new BotCommand("/start", "получить начальную информацию"));

@@ -30,7 +30,7 @@ public class BookService {
                 books.size() + "\n" + ":white_check_mark: - свободных " +
                 books.stream().filter(a -> a.getPerson() == null).toArray().length + "\n" + ":o: - читают " +
                 books.stream().filter(a -> a.getPerson() != null).toArray().length)));
-        for (final Book book : bookRepository.findAll()) {
+        for (final Book book : books) {
             String bookName = book.getName();
             String bookAuthor = book.getAuthor();
             int yearOfRelease = book.getYearOfRelease();
@@ -48,7 +48,10 @@ public class BookService {
             } else {
                 buttonText = "Сдать книгу";
             }
-            ButtonsBuilder builder = new ButtonBuilder().addButton(buttonText, bookName).addRowInline().setKeyboard();
+            ButtonsBuilder builder = new ButtonBuilder()
+                    .addButton(buttonText, bookName)
+                    .addRowInline()
+                    .setKeyboard();
             SendMessage sendMessage = createMessage(chatId, text);
             sendMessage.setReplyMarkup(builder.build().getInlineKeyboardMarkup());
             messages.add(sendMessage);
@@ -75,14 +78,13 @@ public class BookService {
 
     public SendMessage addNewBook(long peopleId, String chatId) {
         Person person = personRepository.findPersonById(peopleId).orElseThrow();
-        Book book = new Book();
-        book.setName("test");
-        book.setAuthor("test");
-        book.setYearOfRelease(1);
-        long bookId = bookRepository.findAll().size() + 1;
-        book.setId(bookId);
+        Book book = Book.builder()
+                .name("test")
+                .author("test")
+                .yearOfRelease(1)
+                .build();
         bookRepository.save(book);
-        person.setPersonStatus(PersonStatus.TapingNameBook);
+        person.setPersonStatus(PersonStatus.TAPING_NAME_BOOK);
         personRepository.save(person);
         return new SendMessage(chatId, "Добавляем новую книгу в библиотеку:\n\n" + "Введите название книги:");
     }
@@ -91,7 +93,7 @@ public class BookService {
         Book book = bookRepository.findBookByName("test").orElseThrow();
         book.setName(name);
         bookRepository.save(book);
-        person.setPersonStatus(PersonStatus.TapingAuthorBook);
+        person.setPersonStatus(PersonStatus.TAPING_AUTHOR_BOOK);
         personRepository.save(person);
         return new SendMessage(chatId, "Вы успешно добавили название книги.\n\n" + "Введите автора:");
     }
@@ -100,7 +102,7 @@ public class BookService {
         Book book = bookRepository.findBookByAuthor("test").orElseThrow();
         book.setAuthor(name);
         bookRepository.save(book);
-        person.setPersonStatus(PersonStatus.TapingYearOfBook);
+        person.setPersonStatus(PersonStatus.TAPING_YEAR_OF_BOOK);
         personRepository.save(person);
         return new SendMessage(chatId, "Вы успешно добавили автора.\n\n" + "Введите год выпуска книги:");
     }
@@ -126,7 +128,7 @@ public class BookService {
         EditMessageText message = new EditMessageText();
         message.setChatId(chatId);
         message.setText(text);
-        message.setMessageId((int) messageId);
+        message.setMessageId((Math.toIntExact(messageId)));
         return message;
     }
 }

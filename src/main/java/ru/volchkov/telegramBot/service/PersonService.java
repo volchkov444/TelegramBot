@@ -3,6 +3,7 @@ package ru.volchkov.telegramBot.service;
 
 import com.vdurmont.emoji.EmojiParser;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -16,6 +17,7 @@ import ru.volchkov.telegramBot.repository.PersonRepository;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class PersonService {
@@ -24,11 +26,12 @@ public class PersonService {
     static final String NO_BUTTON = "NO_BUTTON";
 
     public SendMessage startCommand(Update update) {
-        Person person = new Person();
-        person.setId(update.getMessage().getChat().getId());
-        person.setName("Guest");
-        person.setAge(1);
-        person.setPersonStatus(PersonStatus.GUEST);
+        Person person = Person.builder()
+                .name("Guest")
+                .age(1)
+                .id(update.getMessage().getChat().getId())
+                .personStatus(PersonStatus.GUEST)
+                .build();
         personRepository.save(person);
         String chatId = String.valueOf(update.getMessage().getChatId());
         String text = EmojiParser.parseToUnicode("Добро пожаловать, вы вошли как гость," + " пройдите регистрацию чтобы пользоваться нашим функционалом /register :smiling_face_with_hearts:");
@@ -39,17 +42,22 @@ public class PersonService {
         String name = update.getMessage().getChat().getFirstName();
         long id = update.getMessage().getChat().getId();
         int age = Integer.parseInt(update.getMessage().getText());
-        Person person = personRepository.findPersonById(id).orElseThrow();
-        person.setPersonStatus(peopleStatus);
-        person.setAge(age);
-        person.setName(name);
+        Person person = personRepository.findPersonById(id).orElseThrow().toBuilder()
+                .personStatus(peopleStatus)
+                .age(age)
+                .name(name)
+                .build();
         personRepository.save(person);
     }
 
     public SendMessage register(Update update) {
         String chatId = String.valueOf(update.getMessage().getChatId());
         String text = "Регистрация пройдет автоматически.\n" + "Вы серьезно хотите зарегестрироваться?";
-        ButtonsBuilder builder = new ButtonBuilder().addButton("Yes", YES_BUTTON).addButton("No", NO_BUTTON).addRowInline().setKeyboard();
+        ButtonsBuilder builder = new ButtonBuilder()
+                .addButton("Yes", YES_BUTTON)
+                .addButton("No", NO_BUTTON)
+                .addRowInline()
+                .setKeyboard();
         SendMessage message = createMessage(chatId, text);
         message.setReplyMarkup(builder.build().getInlineKeyboardMarkup());
         return message;
@@ -70,16 +78,23 @@ public class PersonService {
     }
 
     public SendMessage listOfUser(String chatId, String name) {
-        long id = personRepository.findPersonByName(name).orElseThrow().getId();
+        Person person = personRepository.findPersonByName(name).orElseThrow();
+        long id = person.getId();
         SendMessage message = createMessage(chatId, "   ID:" + id + "     имя:" + name);
-        ButtonsBuilder builder = new ButtonBuilder().addButton("Вся информация", name).addRowInline().setKeyboard();
+        ButtonsBuilder builder = new ButtonBuilder()
+                .addButton("Вся информация", name)
+                .addRowInline()
+                .setKeyboard();
         message.setReplyMarkup(builder.build().getInlineKeyboardMarkup());
         return message;
     }
 
     public List<SendMessage> userMenu(String chatId, PersonRepository personRepository) {
         List<SendMessage> messages = new ArrayList<>();
-        ButtonsBuilder builder = new ButtonBuilder().addButton("Список всех пользователей", "listOfUsers").addRowInline().setKeyboard();
+        ButtonsBuilder builder = new ButtonBuilder()
+                .addButton("Список всех пользователей", "listOfUsers")
+                .addRowInline()
+                .setKeyboard();
         SendMessage message = createMessage(chatId, "Колличество пользователей:" + personRepository.findAll().size() + "\n");
         message.setReplyMarkup(builder.build().getInlineKeyboardMarkup());
         messages.add(message);
@@ -93,12 +108,15 @@ public class PersonService {
         messages.add(new SendMessage(chatId, "Имя пользователя: " + person.getName() + "\n" + "Статус: " + person.getPersonStatus() + "\n" + "ID: " + person.getId() + "\n" + "Возраст: " + person.getAge()));
         if (person.getBooksOfPerson().isEmpty()) {
             messages.add(new SendMessage(chatId, "Пользователь не читает ни одной книги."));
-        } else if (person.getBooksOfPerson().size() > 0) {
+        } else {
             for (Book book : person.getBooksOfPerson()) {
                 String bookName = book.getName();
                 String bookAuthor = book.getAuthor();
                 int yearOfRelease = book.getYearOfRelease();
-                ButtonsBuilder builder = new ButtonBuilder().addButton("Сдать книгу", book.getName()).addRowInline().setKeyboard();
+                ButtonsBuilder builder = new ButtonBuilder()
+                        .addButton("Сдать книгу", book.getName())
+                        .addRowInline()
+                        .setKeyboard();
                 SendMessage message = createMessage(chatId, EmojiParser.parseToUnicode(":o:  " + bookName + ", " + bookAuthor + " " + yearOfRelease + "  :o:"));
                 message.setReplyMarkup(builder.build().getInlineKeyboardMarkup());
                 messages.add(message);
