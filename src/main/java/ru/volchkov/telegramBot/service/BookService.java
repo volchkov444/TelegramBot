@@ -90,7 +90,6 @@ public class BookService {
     }
 
     public SendMessage addBookName(String name, String chatId, Person person) {
-        System.out.println();
         Book book = bookRepository.findBookByName("test").orElseThrow();
         book.setName(name);
         bookRepository.save(book);
